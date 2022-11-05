@@ -1,0 +1,21 @@
+# Referencing: What do I need to do? Speak to Matt about this. 
+
+
+
+
+
+
+
+
+
+if (DEFINED ENV{FREERTOS_KERNEL_PATH} AND (NOT FREERTOS_KERNEL_PATH))
+    set(FREERTOS_KERNEL_PATH $ENV{FREERTOS_KERNEL_PATH})
+    message("Using FREERTOS_KERNEL_PATH from environment ('${FREERTOS_KERNEL_PATH}')")
+endif ()
+
+if (NOT EXISTS ${FREERTOS_KERNEL_PATH})
+    message(FATAL_ERROR "Directory '${FREERTOS_KERNEL_PATH}' not found")
+endif()
+
+set(FREERTOS_KERNEL_RP2040_RELATIVE_PATH "portable/ThirdParty/GCC/RP2040")
+add_subdirectory(${FREERTOS_KERNEL_PATH}/${FREERTOS_KERNEL_RP2040_RELATIVE_PATH} FREERTOS_KERNEL)
