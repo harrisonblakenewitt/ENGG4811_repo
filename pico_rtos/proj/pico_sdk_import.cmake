@@ -1,13 +1,3 @@
-# Referencing: What do I need to do? Speak to Matt about this. 
-
-
-
-
-
-
-
-
-
 if (DEFINED ENV{PICO_SDK_PATH} AND (NOT PICO_SDK_PATH))
     set(PICO_SDK_PATH $ENV{PICO_SDK_PATH})
     message("Using PICO_SDK_PATH from environment ('${PICO_SDK_PATH}')")
